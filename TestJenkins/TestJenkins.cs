@@ -26,7 +26,7 @@ namespace UnderTests.Dashboard_MainPage
         public void waitForElement(string locator)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
-            IWebElement myDynamicElement = wait.Until(driver => driver.FindElement(By.XPath(locator)));
+            IWebElement myDynamicElement = wait.Until(drajver => drajver.FindElement(By.XPath(locator)));
         }
 
         [TestMethod]
