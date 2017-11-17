@@ -40,7 +40,7 @@ namespace UnderTests.Dashboard_MainPage
             Thread.Sleep(250);
             driver.FindElement(By.XPath("/html/body/cdp-root/cdp-user/div/cdp-projects/div[2]/div[1]/div[4]/div/div/table/tbody/tr/td[2]")).Click();
             waitForElement("/html/body/cdp-root/cdp-user/div/cdp-projects/div[2]/div[1]/div[4]/div/div/table/tbody/tr[10]/td[5]/div/cdp-check-box/div");
-            int broj = 2160;
+            int broj = 2155;
             var rows = driver.FindElements(By.TagName("tr")).Count;
 
             Assert.AreEqual(broj, rows, "ACTUAL ROW NUMBER IS: " + rows + "");
