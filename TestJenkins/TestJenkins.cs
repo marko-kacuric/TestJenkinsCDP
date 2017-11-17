@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Threading;
 
 namespace UnderTests.Dashboard_MainPage
 {
@@ -25,17 +26,18 @@ namespace UnderTests.Dashboard_MainPage
 
         public void waitForElement(string locator)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
-            IWebElement myDynamicElement = wait.Until(driver => driver.FindElement(By.XPath(locator)));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            IWebElement myDynamicElement = wait.Until(drajver => drajver.FindElement(By.XPath(locator)));
         }
 
         [TestMethod]
         public void CDPcountRowsInProject()
         {
             goToandLogin("swtest", "$greenteA01");
-            waitForElement("/html/body/cdp-root/cdp-user/cdp-sidebar/div/div/ul/li[3]/div");
-            driver.FindElement(By.XPath("/html/body/cdp-root/cdp-user/cdp-sidebar/div/div/ul/li[3]/div")).Click();
+            waitForElement("/html/body/cdp-root/cdp-user/cdp-sidebar/div");
+            driver.FindElement(By.XPath("/html/body/cdp-root/cdp-user/cdp-sidebar/div/div/ul/li[1]/div")).Click();
             waitForElement("/html/body/cdp-root/cdp-user/div/cdp-projects/div[2]/div[1]/div[4]/div/div/table/tbody/tr/td[2]");
+            Thread.Sleep(250);
             driver.FindElement(By.XPath("/html/body/cdp-root/cdp-user/div/cdp-projects/div[2]/div[1]/div[4]/div/div/table/tbody/tr/td[2]")).Click();
             waitForElement("/html/body/cdp-root/cdp-user/div/cdp-projects/div[2]/div[1]/div[4]/div/div/table/tbody/tr[10]/td[5]/div/cdp-check-box/div");
             int broj = 2160;
@@ -43,7 +45,8 @@ namespace UnderTests.Dashboard_MainPage
 
             Assert.AreEqual(broj, rows, "ACTUAL ROW NUMBER IS: " + rows + "");
 
-
+            driver.Close();
+            driver.Quit();
         }
     }
 }
