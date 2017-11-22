@@ -4,10 +4,12 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
+using NUnit;
+using NUnit.Framework;
 
 namespace UnderTests.Dashboard_MainPage
 {
-    [TestClass]
+    [TestFixture]
     public class CDP_COUNT
     {
         IWebDriver driver = new ChromeDriver();
@@ -30,7 +32,7 @@ namespace UnderTests.Dashboard_MainPage
             IWebElement myDynamicElement = wait.Until(drajver => drajver.FindElement(By.XPath(locator)));
         }
 
-        [TestMethod]
+        [Test]
         public void CDPcountRowsInProject()
         {
             goToandLogin("swtest", "$greenteA01");
@@ -43,10 +45,15 @@ namespace UnderTests.Dashboard_MainPage
             int broj = 2155;
             var rows = driver.FindElements(By.TagName("tr")).Count;
 
-            Assert.AreEqual(broj, rows, "ACTUAL ROW NUMBER IS: " + rows + "");
+            NUnit.Framework.Assert.AreEqual(broj, rows, "ACTUAL ROW NUMBER IS: " + rows + "");
 
+        }
+            [TearDown]
+            public void quitBrowser()
+        {
             driver.Close();
             driver.Quit();
+        }           
         }
     }
-}
+
