@@ -21,3 +21,11 @@ c:\users\kci\documents\visual studio 2015\Projects\TestJenkins\TestJenkins\bin\D
 c:\users\kci\documents\visual studio 2015\Projects\TestJenkins\TestJenkins\obj\Debug\TestJenkins.csprojResolveAssemblyReference.cache
 c:\users\kci\documents\visual studio 2015\Projects\TestJenkins\TestJenkins\obj\Debug\TestJenkins.dll
 c:\users\kci\documents\visual studio 2015\Projects\TestJenkins\TestJenkins\obj\Debug\TestJenkins.pdb
+C:\Users\kci\Documents\Visual Studio 2015\Projects\TestJenkins\TestJenkins\bin\Debug\xunit.abstractions.dll
+C:\Users\kci\Documents\Visual Studio 2015\Projects\TestJenkins\TestJenkins\bin\Debug\xunit.assert.dll
+C:\Users\kci\Documents\Visual Studio 2015\Projects\TestJenkins\TestJenkins\bin\Debug\xunit.core.dll
+C:\Users\kci\Documents\Visual Studio 2015\Projects\TestJenkins\TestJenkins\bin\Debug\xunit.execution.desktop.dll
+C:\Users\kci\Documents\Visual Studio 2015\Projects\TestJenkins\TestJenkins\bin\Debug\xunit.abstractions.xml
+C:\Users\kci\Documents\Visual Studio 2015\Projects\TestJenkins\TestJenkins\bin\Debug\xunit.assert.xml
+C:\Users\kci\Documents\Visual Studio 2015\Projects\TestJenkins\TestJenkins\bin\Debug\xunit.core.xml
+C:\Users\kci\Documents\Visual Studio 2015\Projects\TestJenkins\TestJenkins\bin\Debug\xunit.execution.desktop.xml

@@ -4,15 +4,16 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Threading;
-
+using Xunit;
 
 namespace UnderTests.Dashboard_MainPage
 {
-    [TestClass]
+    
     public class CDP_COUNT
     {
         IWebDriver driver = new ChromeDriver();
 
+        
         public void goToandLogin(string username, string password)
         {
             driver.Navigate().GoToUrl("https://customer-portal.p3-group.com");
@@ -25,13 +26,14 @@ namespace UnderTests.Dashboard_MainPage
             driver.FindElement(By.XPath("/html/body/cdp-root/cdp-sign-in/div/div/div[2]/div/button")).Click();
         }
 
+        
         public void waitForElement(string locator)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             IWebElement myDynamicElement = wait.Until(drajver => drajver.FindElement(By.XPath(locator)));
         }
 
-        [TestMethod]
+        [Fact]
         public void CDPcountRowsInProject()
         {
             goToandLogin("swtest", "$greenteA01");
@@ -44,7 +46,7 @@ namespace UnderTests.Dashboard_MainPage
             int broj = 2155;
             var rows = driver.FindElements(By.TagName("tr")).Count;
 
-            Assert.AreEqual(broj, rows, "ACTUAL ROW NUMBER IS: " + rows + "");
+            Xunit.Assert.Equal(broj, rows);
 
             driver.Close();
             driver.Quit();
