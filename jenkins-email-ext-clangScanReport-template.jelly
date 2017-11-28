@@ -212,7 +212,7 @@
           </a>
 	  <h2> Test Trend </h2>
           <img lazymap="${rooturl}${project.url}/test/trendMap?failureOnly=false" alt="[Test result trend chart]" src="${rooturl}${project.url}/test/trend?failureOnly=false" usemap="#map0" />
-	  <h2> JUnit Tests </h2>
+	  <h2> Unit Tests </h2>
           <table class="border">
             <tr>
               <th class="border">Package</th>
