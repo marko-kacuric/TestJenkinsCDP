@@ -249,6 +249,7 @@
 		      <tt>${passed_test.getFullName()}</tt>
 		     </td>
 		  </tr>
+		 </j:forEach>	
 		</j:forEach>	
               </j:forEach>
             </j:forEach>
