@@ -242,13 +242,14 @@
                       <tt>${failed_test.getFullName()}</tt>
                     </td>
                   </tr>
-                </j:forEach var="passed_test"
+                <j:forEach var="passed_test"
 		   items="${packageResult.getPassedTests()}">
 		   <tr>
 		     <td class="test_passed" colspan="5">
 		      <tt>${passed_test.getFullName()}</tt>
 		     </td>
 		  </tr>
+		</j:forEach>	
               </j:forEach>
             </j:forEach>
           </table>
